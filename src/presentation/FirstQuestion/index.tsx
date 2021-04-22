@@ -1,32 +1,48 @@
 import React from "react";
+import { Film } from "../../type/film";
+import {Loading} from "../../components/Loading/Loading";
+import {DateTime} from "luxon";
 
 interface FirstQuestionPresentation {
-    film: {title: string, release_date: Date};
-    answers: Date[];
-    onAnswerSubmitted: (date: Date) => void;
+    film: Film | null;
+    answers: DateTime[] | null;
+    onAnswerSubmitted: (date: DateTime) => void;
     isAnswered: boolean;
     isCorrect: boolean;
+    isLoading: boolean;
 }
 
 export const FirstQuestionPresentation = (props: FirstQuestionPresentation) => {
     const beforeAnswer = (
-        <>
-            <div>{props.film.title} の公開日はいつですか？</div>
-            <div>
-                {props.answers.map((date, index) => (
-                    <button key={index} onClick={() => {props.onAnswerSubmitted(date)}}>
-                        {date.toISOString()}
-                    </button>
-                ))}
-            </div>
-        </>
+        props.film && props.answers && (
+            <>
+                <div>When is the release date of {props.film.title}?</div>
+                <div>
+                    {props.answers.map((date, index) => (
+                        <button key={index} onClick={() => {props.onAnswerSubmitted(date)}}>
+                            {date.toISODate()}
+                        </button>
+                    ))}
+                </div>
+            </>
+        )
     )
     const afterAnswer = (
         <>
-            {/*TODO Filmに関する情報を表示*/}
-            {props.isCorrect ? <p>おめでとうございます！正解です</p> : <p>残念！不正解です</p>}
-            次のクイズへ
+            {props.isCorrect ? <p>Great! That is correct answer!</p> : <p>Unfortunately, that is the wrong answer!</p>}
+            <div>
+                <div>{props.film?.title}</div>
+                <div>episode: {props.film?.episode_id}</div>
+                <div>director: {props.film?.director}</div>
+                <div>producer: {props.film?.producer}</div>
+                <div>release date: {props.film?.release_date?.toISODate()}</div>
+                <div>opening: {props.film?.opening_crawl}</div>
+            </div>
+            next!
         </>
     )
+    if (props.isLoading) {
+        return <Loading />
+    }
     return props.isAnswered ? afterAnswer : beforeAnswer;
 }
