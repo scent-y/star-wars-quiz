@@ -1,7 +1,9 @@
 import React from "react";
 import { Film } from "../../type/film";
-import {Loading} from "../../components/Loading/Loading";
-import {DateTime} from "luxon";
+import { Loading } from "../../components/Loading/Loading";
+import { DateTime } from "luxon";
+import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../routes";
 
 interface FirstQuestionPresentation {
     film: Film | null;
@@ -38,7 +40,7 @@ export const FirstQuestionPresentation = (props: FirstQuestionPresentation) => {
                 <div>release date: {props.film?.release_date?.toISODate()}</div>
                 <div>opening: {props.film?.opening_crawl}</div>
             </div>
-            next!
+            <Link to={PATH_NAME.secondQuestion()}>next!</Link>
         </>
     )
     if (props.isLoading) {
