@@ -2,6 +2,8 @@ import {People} from "../../type/people";
 import {DateTime} from "luxon";
 import React from "react";
 import {Loading} from "../../components/Loading/Loading";
+import {PATH_NAME} from "../../routes";
+import {Link} from "react-router-dom";
 
 interface SecondQuestionProps {
     people: People | null,
@@ -36,6 +38,7 @@ export const SecondQuestionPresentation = (props: SecondQuestionProps) => {
                 <div>gender: {props.people?.gender}</div>
                 <div>height: {props.people?.height}cm</div>
             </div>
+            <Link to={PATH_NAME.thirdQuestion()}>next!</Link>
         </>
     )
     if (props.isLoading) {
