@@ -3,5 +3,5 @@ export type People = {
     birth_year: string | null,
     gender: string | null,
     height: string | null,
-    home_world: string | null
+    homeworld: string | null
 }

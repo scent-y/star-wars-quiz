@@ -33,7 +33,7 @@ export const SecondQuestionPresentation = (props: SecondQuestionProps) => {
             {props.isCorrect ? <p>Great! That is correct answer!</p> : <p>Unfortunately, that is the wrong answer!</p>}
             <div>
                 <div>{props.people?.name}</div>
-                <div>homeworld: {props.people?.home_world}</div>
+                <div>homeworld: {props.people?.homeworld}</div>
                 <div>birth year: {props.people?.birth_year}</div>
                 <div>gender: {props.people?.gender}</div>
                 <div>height: {props.people?.height}cm</div>

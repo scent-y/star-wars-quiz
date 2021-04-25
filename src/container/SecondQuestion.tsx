@@ -9,7 +9,7 @@ const peopleInitialState: People = {
     birth_year: null,
     gender: null,
     height: null,
-    home_world: null,
+    homeworld: null,
     name: null
 }
 
@@ -20,7 +20,7 @@ export const SecondQuestion = () => {
     const [isAnswered, setIsAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const onAnswerSubmitted = (homeWorld: string) => {
-        if (homeWorld == people?.home_world) {
+        if (homeWorld == people?.homeworld) {
             setIsCorrect(true);
             setIsAnswered(true);
         } else {
@@ -43,7 +43,7 @@ export const SecondQuestion = () => {
                     birth_year: people.data.birth_year,
                     gender: people.data.gender,
                     height: people.data.height,
-                    home_world: homeWorld.data.name,
+                    homeworld: homeWorld.data.name,
                     name: people.data.name
                 })
                 setAnswers(planetNameList);
