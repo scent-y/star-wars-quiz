@@ -29,7 +29,7 @@ export const FirstQuestion = () => {
             try {
                 const films = await axios.get(`${SWAPI.film()}`);
                 setAnswers(films.data.results
-                    .map((list: { release_date: string })  => DateTime.fromISO(list.release_date)));
+                    .map((film: { release_date: string })  => DateTime.fromISO(film.release_date)));
                 setFilm({
                     director: films.data.results[targetFilm].director,
                     title: films.data.results[targetFilm].title,
