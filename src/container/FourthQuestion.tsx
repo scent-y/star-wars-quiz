@@ -38,7 +38,7 @@ export const FourthQuestion = () => {
         (async () => {
             try {
                 setIsLoading(true);
-                const speciesResponse = await axios.get(`${SWAPI.species()}${getRandom(1,36)}`);
+                const speciesResponse = await axios.get(`${SWAPI.species()}${getRandom(1,37)}`);
                 if (speciesResponse.data.homeworld != null) {
                     const response = await axios.get(speciesResponse.data.homeworld);
                     speciesHomeworld = response.data.name;

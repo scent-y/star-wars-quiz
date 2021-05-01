@@ -32,7 +32,7 @@ export const SecondQuestion = () => {
         (async () => {
             try {
                 setIsLoading(true);
-                const people = await axios.get(`${SWAPI.people()}${getRandom(0,81)}`);
+                const people = await axios.get(`${SWAPI.people()}${getRandom(1,82)}`);
                 const homeWorld = await axios.get(people.data.homeworld);
                 const planets = await axios.get(SWAPI.planets());
                 const planetNameList: string[] = planets.data.results
