@@ -48,7 +48,8 @@ export const FifthQuestionPresentation = (props: FifthQuestionPresentationProps)
     )
     const afterAnswer = (
         <>
-            {props.isCorrect ? <p>Great! That is correct answer!</p> : <p>Unfortunately, that is the wrong answer!</p>}
+            {props.isCorrect ? <p>Great! That is correct answer!</p> :
+                <p>Unfortunately, that is the wrong answer! correct name is {props.starship?.name}</p>}
             <Link to={PATH_NAME.result()}>To announce the results</Link>
         </>
     )
