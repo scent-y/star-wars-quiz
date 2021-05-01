@@ -4,6 +4,8 @@ import axios from "axios";
 import { SWAPI } from "../env";
 import { getRandom } from "../shared";
 import { Starship } from "../type/starship";
+import { resultActions } from "../store/result";
+import { useDispatch } from "react-redux";
 
 const starshipInitialState: Starship = {
     crew: null,
@@ -16,12 +18,14 @@ const starshipInitialState: Starship = {
 }
 
 export const FifthQuestion = () => {
+    const dispatch = useDispatch();
     const [isAnswered, setIsAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [starship, setStarship] = useState(starshipInitialState);
     const onSubmitStarshipName = (inputName: string) => {
         if (inputName == starship.name) {
+            dispatch(resultActions.correct())
             setIsCorrect(true);
             setIsAnswered(true);
         } else {

@@ -10,7 +10,7 @@ import { SecondQuestion } from "../../container/SecondQuestion";
 import { ThirdQuestion } from "../../container/ThirdQuestion";
 import { FourthQuestion } from "../../container/FourthQuestion";
 import { FifthQuestion } from "../../container/FifthQuestion";
-import { Result } from "../../container/Result";
+import { ResultAnnouncement } from "../../container/ResultAnnouncement";
 import { PATH_NAME } from "../../routes";
 
 export const Routes = () => {
@@ -36,7 +36,7 @@ export const Routes = () => {
                         <FifthQuestion />
                     </Route>
                     <Route exact path={PATH_NAME.result()}>
-                        <Result />
+                        <ResultAnnouncement />
                     </Route>
                 </Switch>
         </Router>

@@ -4,6 +4,8 @@ import axios from "axios";
 import { SWAPI } from "../env";
 import { getRandom, shuffleArray } from "../shared";
 import { FourthQuestionPresentation } from "../presentation/FourthQuestion";
+import { resultActions } from "../store/result";
+import { useDispatch } from "react-redux";
 
 const speciesInitialState: Species = {
     average_height: null,
@@ -18,6 +20,7 @@ const speciesInitialState: Species = {
 const answersInitialState: (string | null)[] = [null]
 
 export const FourthQuestion = () => {
+    const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(false);
     const [isAnswered, setIsAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
@@ -25,6 +28,7 @@ export const FourthQuestion = () => {
     const [species, setSpecies] = useState(speciesInitialState);
     const onAnswerSubmitted = (selectedHomeworld: string | null): void => {
         if (selectedHomeworld == species.homeworld) {
+            dispatch(resultActions.correct());
             setIsCorrect(true);
             setIsAnswered(true);
         } else {

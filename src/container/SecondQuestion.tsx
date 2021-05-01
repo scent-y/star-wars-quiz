@@ -4,6 +4,8 @@ import axios from "axios";
 import { SWAPI } from "../env";
 import {getRandom, shuffleArray} from "../shared";
 import { People } from "../type/people";
+import { resultActions } from "../store/result";
+import { useDispatch } from "react-redux";
 
 const peopleInitialState: People = {
     birth_year: null,
@@ -19,8 +21,10 @@ export const SecondQuestion = () => {
     const [answers, setAnswers] = useState([""]);
     const [isAnswered, setIsAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
+    const dispath = useDispatch();
     const onAnswerSubmitted = (homeWorld: string): void => {
         if (homeWorld == people?.homeworld) {
+            dispath(resultActions.correct());
             setIsCorrect(true);
             setIsAnswered(true);
         } else {

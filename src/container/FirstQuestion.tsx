@@ -5,6 +5,8 @@ import { SWAPI } from "../env";
 import { Film } from "../type/film";
 import { DateTime } from "luxon";
 import {getRandom} from "../shared";
+import { resultActions } from "../store/result";
+import { useDispatch } from "react-redux";
 
 const filmInitialState: Film = {
     director: null,
@@ -18,6 +20,7 @@ const filmInitialState: Film = {
 const targetFilm: number = getRandom(0,5);
 
 export const FirstQuestion = () => {
+    const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(false);
     const [isAnswered, setIsAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
@@ -47,6 +50,7 @@ export const FirstQuestion = () => {
     , [])
     const onAnswerSubmitted = (date: DateTime):void => {
         if (date.year === film.release_date?.year) {
+            dispatch(resultActions.correct());
             setIsCorrect(true);
             setIsAnswered(true);
         } else {
