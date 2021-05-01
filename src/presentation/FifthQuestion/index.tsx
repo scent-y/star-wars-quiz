@@ -1,6 +1,9 @@
 import { Starship } from "../../type/starship";
 import React, { useState } from "react";
 import { Loading } from "../../components/Loading/Loading";
+import {PATH_NAME} from "../../routes";
+import { Link } from "react-router-dom";
+
 
 interface FifthQuestionPresentationProps {
     isAnswered: boolean;
@@ -46,6 +49,7 @@ export const FifthQuestionPresentation = (props: FifthQuestionPresentationProps)
     const afterAnswer = (
         <>
             {props.isCorrect ? <p>Great! That is correct answer!</p> : <p>Unfortunately, that is the wrong answer!</p>}
+            <Link to={PATH_NAME.result()}>To announce the results</Link>
         </>
     )
     if (props.isLoading) {

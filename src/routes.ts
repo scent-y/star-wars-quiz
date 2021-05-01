@@ -4,5 +4,6 @@ export const PATH_NAME = {
     secondQuestion: () => "/q2",
     thirdQuestion: () => "/q3",
     fourthQuestion: () => "/q4",
-    fifthQuestion: () => "/q5"
+    fifthQuestion: () => "/q5",
+    result: () => "/result"
 } as const
