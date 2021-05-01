@@ -16,6 +16,7 @@ const speciesInitialState: Species = {
     language: null,
     name: null
 }
+const targetSpecies = getRandom(0,8);
 
 export const ThirdQuestion = () => {
     const dispatch = useDispatch();
@@ -38,20 +39,23 @@ export const ThirdQuestion = () => {
         (async () => {
             setIsLoading(true);
             try {
-                const species = await axios.get(SWAPI.species());
-                const targetSpecies = getRandom(0, species.data.results.length - 1);
-                const homeworldResponse = await axios
-                        .get(species.data.results[targetSpecies].homeworld);
+                const speciesResponse = await axios.get(SWAPI.species());
+                let speciesHomeworld: (string | null) = null;
+                if (speciesResponse.data.results[targetSpecies].homeworld) {
+                    const homeworldResponse = await axios
+                        .get(speciesResponse.data.results[targetSpecies].homeworld);
+                    speciesHomeworld = homeworldResponse.data.name;
+                }
                 setSpecies({
-                    average_height: species.data.results[targetSpecies].average_height,
-                    classification: species.data.results[targetSpecies].classification,
-                    eye_colors: species.data.results[targetSpecies].eye_colors,
-                    hair_colors: species.data.results[targetSpecies].hair_colors,
-                    homeworld: species.data.results[targetSpecies].homeworld ? homeworldResponse.data.name : null,
-                    language: species.data.results[targetSpecies].language,
-                    name: species.data.results[targetSpecies].name
+                    average_height: speciesResponse.data.results[targetSpecies].average_height,
+                    classification: speciesResponse.data.results[targetSpecies].classification,
+                    eye_colors: speciesResponse.data.results[targetSpecies].eye_colors,
+                    hair_colors: speciesResponse.data.results[targetSpecies].hair_colors,
+                    homeworld: speciesResponse.data.results[targetSpecies].homeworld ? speciesHomeworld : null,
+                    language: speciesResponse.data.results[targetSpecies].language,
+                    name: speciesResponse.data.results[targetSpecies].name
                 })
-                setAnswers(species.data.results
+                setAnswers(speciesResponse.data.results
                     .map((species: {language: string}) => species.language ));
                 setIsLoading(false);
             } catch (e) {
