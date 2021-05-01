@@ -1,6 +1,8 @@
 import { Species } from "../../type/species";
 import React from "react";
 import { Loading } from "../../components/Loading/Loading";
+import { Link } from "react-router-dom";
+import {PATH_NAME} from "../../routes";
 
 interface FourthQuestionPresentationProps {
     answers: (string | null)[] | null;
@@ -40,6 +42,7 @@ export const FourthQuestionPresentation = (props: FourthQuestionPresentationProp
                 <div>eye color: {props.species?.eye_colors}</div>
                 <div>hair color: {props.species?.hair_colors}</div>
             </div>
+            <Link to={PATH_NAME.fifthQuestion()}>next</Link>
         </>
     )
     if (props.isLoading) {

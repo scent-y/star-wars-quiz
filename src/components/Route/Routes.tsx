@@ -2,14 +2,14 @@ import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom"
 import { Home } from "../../container/Home";
 import { FirstQuestion } from "../../container/FirstQuestion";
 import { SecondQuestion } from "../../container/SecondQuestion";
 import { ThirdQuestion } from "../../container/ThirdQuestion";
 import { FourthQuestion } from "../../container/FourthQuestion";
+import { FifthQuestion } from "../../container/FifthQuestion";
 import { PATH_NAME } from "../../routes";
 
 export const Routes = () => {
@@ -30,6 +30,9 @@ export const Routes = () => {
                     </Route>
                     <Route exact path={PATH_NAME.fourthQuestion()}>
                         <FourthQuestion />
+                    </Route>
+                    <Route exact path={PATH_NAME.fifthQuestion()}>
+                        <FifthQuestion />
                     </Route>
                 </Switch>
         </Router>
