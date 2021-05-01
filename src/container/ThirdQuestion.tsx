@@ -21,9 +21,7 @@ export const ThirdQuestion = () => {
     const [isCorrect, setIsCorrect] = useState(false);
     const [answers, setAnswers] = useState([""]);
     const [species,setSpecies] = useState(speciesInitialState);
-    const [homeworld, setHomeworld] = useState(null);
     const onAnswerSubmitted = (language: string):void => {
-        console.log("fire!!")
         if (language == species.language) {
             setIsCorrect(true);
             setIsAnswered(true);

@@ -19,7 +19,7 @@ export const SecondQuestion = () => {
     const [answers, setAnswers] = useState([""]);
     const [isAnswered, setIsAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
-    const onAnswerSubmitted = (homeWorld: string) => {
+    const onAnswerSubmitted = (homeWorld: string): void => {
         if (homeWorld == people?.homeworld) {
             setIsCorrect(true);
             setIsAnswered(true);

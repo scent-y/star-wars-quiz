@@ -1,28 +1,27 @@
 import { Species } from "../../type/species";
 import React from "react";
 import { Loading } from "../../components/Loading/Loading";
-import { Link } from "react-router-dom";
-import { PATH_NAME } from "../../routes";
 
-interface ThirdQuestionPresentationProps {
-    answers: string[] | null;
-    onAnswerSubmitted: (language: string) => void;
+interface FourthQuestionPresentationProps {
+    answers: (string | null)[] | null;
+    onAnswerSubmitted: (homeworld: (string | null)) => void;
     isAnswered: boolean;
     isCorrect: boolean;
     isLoading: boolean;
     species: Species | null;
 }
 
-export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps) => {
-    const beforeAnswer = (
+
+export const FourthQuestionPresentation = (props: FourthQuestionPresentationProps) => {
+    const beforeAnsewr = (
         props.answers && props.species && (
             <>
-                <div>What is the language commonly spoken by {props.species.name} ?</div>
+                <div>Where is {props.species.name}'s hometown?</div>
                 <div>
-                    {props.answers.map((language, index) => (
-                        <button key={index} onClick={() => {props.onAnswerSubmitted(language)}}>
-                            {language == "n/a" ? "unknown" : language}
-                        </button>
+                    {props.answers.map((homeworld, index) => (
+                            <button key={index} onClick={() => {props.onAnswerSubmitted(homeworld)}}>
+                                {homeworld != null ? homeworld : "unknown"}
+                            </button>
                     ))}
                 </div>
             </>
@@ -34,19 +33,17 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
             <div>
                 <div>{props.species?.name}</div>
                 <div>language: {props.species?.language}</div>
-                {props.species?.homeworld && (
-                    <div>homeworld: {props.species?.homeworld}</div>
-                )}
+                <div>homeworld: {props.species?.homeworld != null ?
+                                props.species.homeworld : "unknown"}</div>
                 <div>average height: {props.species?.average_height}</div>
                 <div>classification: {props.species?.classification}</div>
                 <div>eye color: {props.species?.eye_colors}</div>
                 <div>hair color: {props.species?.hair_colors}</div>
             </div>
-            <Link to={PATH_NAME.fourthQuestion()}>next!</Link>
         </>
     )
     if (props.isLoading) {
         return <Loading />
     }
-    return props.isAnswered ? afterAnswer : beforeAnswer;
+    return props.isAnswered ? afterAnswer : beforeAnsewr;
 }
