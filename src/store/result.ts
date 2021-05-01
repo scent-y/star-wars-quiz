@@ -8,6 +8,9 @@ export const resultSlice = createSlice({
     reducers: {
         correct: state => {
             state.value += 1
+        },
+        reset: state => {
+            state.value = 0
         }
     }
 })
