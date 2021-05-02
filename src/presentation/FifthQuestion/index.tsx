@@ -1,8 +1,9 @@
 import { Starship } from "../../type/starship";
 import React, { useState } from "react";
 import { Loading } from "../../components/Loading/Loading";
-import {PATH_NAME} from "../../routes";
+import { PATH_NAME } from "../../routes";
 import { Link } from "react-router-dom";
+import { AnswerResult } from "../../components/AnswerResult/AnswerResult";
 
 
 interface FifthQuestionPresentationProps {
@@ -118,8 +119,7 @@ export const FifthQuestionPresentation = (props: FifthQuestionPresentationProps)
     )
     const afterAnswer = (
         <>
-            {props.isCorrect ? <p>Great! That is correct answer!</p> :
-                <p>Unfortunately, that is the wrong answer! correct name is {props.starship?.name}</p>}
+            <AnswerResult isCorrect={props.isCorrect} message={`Correct name is ${props.starship?.name}`} />
             <div className="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
                 <p>
                     <Link to={PATH_NAME.result()}>To announce the results</Link>

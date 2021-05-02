@@ -2,7 +2,8 @@ import { Species } from "../../type/species";
 import React from "react";
 import { Loading } from "../../components/Loading/Loading";
 import { Link } from "react-router-dom";
-import {PATH_NAME} from "../../routes";
+import { PATH_NAME } from "../../routes";
+import { AnswerResult } from "../../components/AnswerResult/AnswerResult";
 
 interface FourthQuestionPresentationProps {
     answers: (string | null)[] | null;
@@ -18,7 +19,7 @@ export const FourthQuestionPresentation = (props: FourthQuestionPresentationProp
     const beforeAnswer = (
         props.answers && props.species && (
             <>
-                <p>Where is {props.species.name}'s hometown?</p>
+                <p>Where is {props.species.name}'s homeworld?</p>
                 {props.answers.map((homeworld, index) => (
                         <button key={index} onClick={() => {props.onAnswerSubmitted(homeworld)}} className="bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-1">
                             {homeworld != null ? homeworld : "unknown"}
@@ -29,7 +30,7 @@ export const FourthQuestionPresentation = (props: FourthQuestionPresentationProp
     )
     const afterAnswer = (
         <>
-            {props.isCorrect ? <p>Great! That is correct answer!</p> : <p>Unfortunately, that is the wrong answer!</p>}
+            <AnswerResult isCorrect={props.isCorrect} />
             <ul className="list-disc space-y-2">
                 <li className="flex items-start">
                     <code className="text-sm font-bold text-gray-900">{props.species?.name}</code>

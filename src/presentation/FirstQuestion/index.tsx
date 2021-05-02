@@ -4,6 +4,7 @@ import { Loading } from "../../components/Loading/Loading";
 import { DateTime } from "luxon";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../routes";
+import { AnswerResult } from "../../components/AnswerResult/AnswerResult";
 
 interface FirstQuestionPresentation {
     film: Film | null;
@@ -29,7 +30,7 @@ export const FirstQuestionPresentation = (props: FirstQuestionPresentation) => {
     )
     const afterAnswer = (
         <>
-            {props.isCorrect ? <p>Great! That is correct answer!</p> : <p>Unfortunately, that is the wrong answer!</p>}
+            <AnswerResult isCorrect={props.isCorrect} />
             <ul className="list-disc space-y-2">
                 <li className="flex items-start">
                     <code className="text-sm font-bold text-gray-900">{props.film?.title}</code>

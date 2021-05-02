@@ -3,6 +3,7 @@ import React from "react";
 import { Loading } from "../../components/Loading/Loading";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../routes";
+import { AnswerResult } from "../../components/AnswerResult/AnswerResult";
 
 interface ThirdQuestionPresentationProps {
     answers: string[] | null;
@@ -28,7 +29,7 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
     )
     const afterAnswer = (
         <>
-            {props.isCorrect ? <p>Great! That is correct answer!</p> : <p>Unfortunately, that is the wrong answer!</p>}
+            <AnswerResult isCorrect={props.isCorrect} />
             <ul className="list-disc space-y-2">
                 <li className="flex items-start">
                     <code className="text-sm font-bold text-gray-900">{props.species?.name}</code>
