@@ -71,7 +71,7 @@ export const FourthQuestionPresentation = (props: FourthQuestionPresentationProp
                       </svg>
                     </span>
                     <p className="ml-2">
-                        hair_colors：
+                        hair colors：
                         <code className="text-sm font-bold text-gray-900">{props.species?.hair_colors}</code>
                     </p>
                 </li>
@@ -84,7 +84,7 @@ export const FourthQuestionPresentation = (props: FourthQuestionPresentationProp
                       </svg>
                     </span>
                     <p className="ml-2">
-                        eye_colors：
+                        eye colors：
                         <code className="text-sm font-bold text-gray-900">{props.species?.eye_colors}</code>
                     </p>
                 </li>
