@@ -34,65 +34,65 @@ export const SecondQuestionPresentation = (props: SecondQuestionProps) => {
                     <code className="text-sm font-bold text-gray-900">{props.people?.name}</code>
                 </li>
                 <li className="flex items-start">
-                <span className="h-6 flex items-center sm:h-7">
-                  <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"/>
-                  </svg>
-                </span>
+                    <span className="h-6 flex items-center sm:h-7">
+                      <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"/>
+                      </svg>
+                    </span>
                     <p className="ml-2">
                         homeworld：
                         <code className="text-sm font-bold text-gray-900">{props.people?.homeworld}</code>
                     </p>
                 </li>
                 <li className="flex items-start">
-                <span className="h-6 flex items-center sm:h-7">
-                  <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"/>
-                  </svg>
-                </span>
+                    <span className="h-6 flex items-center sm:h-7">
+                      <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"/>
+                      </svg>
+                    </span>
                     <p className="ml-2">
                         height：
                         <code className="text-sm font-bold text-gray-900">{props.people?.height}</code>
                     </p>
                 </li>
                 <li className="flex items-start">
-                <span className="h-6 flex items-center sm:h-7">
-                  <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"/>
-                  </svg>
-                </span>
+                    <span className="h-6 flex items-center sm:h-7">
+                      <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"/>
+                      </svg>
+                    </span>
                     <p className="ml-2">
                         gender：
                         <code className="text-sm font-bold text-gray-900">{props.people?.gender != "n/a" ? props.people?.gender : "unknown"}</code>
                     </p>
                 </li>
                 <li className="flex items-start">
-                <span className="h-6 flex items-center sm:h-7">
-                  <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"/>
-                  </svg>
-                </span>
+                    <span className="h-6 flex items-center sm:h-7">
+                      <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"/>
+                      </svg>
+                    </span>
                     <p className="ml-2">
                         homeworld：
                         <code className="text-sm font-bold text-gray-900">{props.people?.homeworld}</code>
                     </p>
                 </li>
                 <li className="flex items-start">
-                <span className="h-6 flex items-center sm:h-7">
-                  <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"/>
-                  </svg>
-                </span>
+                    <span className="h-6 flex items-center sm:h-7">
+                      <svg className="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"/>
+                      </svg>
+                    </span>
                     <p className="ml-2">
                         birth_year：
                         <code className="text-sm font-bold text-gray-900">{props.people?.birth_year}</code>

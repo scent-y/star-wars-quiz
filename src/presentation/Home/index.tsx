@@ -12,7 +12,7 @@ export const HomePresentation = () => {
                     <div className="max-w-md mx-auto">
                         <div className="divide-y divide-gray-200">
                             <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                                <p>Star Wars Quiz</p>
+                                <h1>Star Wars Quiz</h1>
                             </div>
                             <div className="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
                                 <p>
