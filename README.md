@@ -8,6 +8,7 @@
 
 - React
 - Redux
+- tailwindcss
 
 ### Referenced architecture
 
@@ -19,5 +20,5 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-
+https://user-images.githubusercontent.com/28536422/116810995-deade000-ab81-11eb-8d87-e7a44293ae85.mov
 
