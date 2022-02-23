@@ -55,8 +55,9 @@ export const ThirdQuestion = () => {
                     language: speciesResponse.data.results[targetSpecies].language,
                     name: speciesResponse.data.results[targetSpecies].name
                 })
-                setAnswers(speciesResponse.data.results
-                    .map((species: {language: string}) => species.language ));
+                const languageArray = speciesResponse.data.results
+                    .map((species: {language: string}) => species.language);
+                setAnswers(Array.from(new Set(languageArray)));
                 setIsLoading(false);
             } catch (e) {
                 console.error(e);

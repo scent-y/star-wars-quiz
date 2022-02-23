@@ -101,9 +101,7 @@ export const FifthQuestionPresentation = (props: FifthQuestionPresentationProps)
                     <p className="ml-2">
                         pilots：
                         {props.starship.pilots ? (
-                            props.starship.pilots?.map((pilot, index) => (
-                                <code className="text-sm font-bold text-gray-900" key={index}>pilot</code>
-                            ))
+                            <code className="text-sm font-bold text-gray-900">{props.starship.pilots.length}</code>
                         ) : <code className="text-sm font-bold text-gray-900">No pilot</code>}
                     </p>
                 </li>

@@ -44,7 +44,7 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
                     </span>
                     <p className="ml-2">
                         language：
-                        <code className="text-sm font-bold text-gray-900">{props.species?.language}</code>
+                        <code className="text-sm font-bold text-gray-900">{props.species?.language != "n/a" ? props.species?.language : "unknown"}</code>
                     </p>
                 </li>
                 {props.species?.homeworld && (
@@ -58,7 +58,7 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
                         </span>
                         <p className="ml-2">
                             homeworld：
-                            <code className="text-sm font-bold text-gray-900">{props.species?.homeworld}</code>
+                            <code className="text-sm font-bold text-gray-900">{props.species?.homeworld != "n/a" ? props.species.homeworld : "unknown"}</code>
                         </p>
                     </li>
                 )}
@@ -71,8 +71,8 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
                       </svg>
                     </span>
                     <p className="ml-2">
-                        hair_colors：
-                        <code className="text-sm font-bold text-gray-900">{props.species?.hair_colors}</code>
+                        hair colors：
+                        <code className="text-sm font-bold text-gray-900">{props.species?.hair_colors != "n/a" ? props.species?.hair_colors : "unknown"}</code>
                     </p>
                 </li>
                 <li className="flex items-start">
@@ -84,8 +84,8 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
                       </svg>
                     </span>
                     <p className="ml-2">
-                        eye_colors：
-                        <code className="text-sm font-bold text-gray-900">{props.species?.eye_colors}</code>
+                        eye colors：
+                        <code className="text-sm font-bold text-gray-900">{props.species?.eye_colors != "n/a" ? props.species?.eye_colors : "unknown"}</code>
                     </p>
                 </li>
                 <li className="flex items-start">
@@ -98,7 +98,7 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
                     </span>
                     <p className="ml-2">
                         average height：
-                        <code className="text-sm font-bold text-gray-900">{props.species?.average_height}</code>
+                        <code className="text-sm font-bold text-gray-900">{props.species?.average_height != "n/a" ? props.species?.average_height : "unknown"}</code>
                     </p>
                 </li>
                 <li className="flex items-start">
@@ -111,7 +111,7 @@ export const ThirdQuestionPresentation = (props: ThirdQuestionPresentationProps)
                     </span>
                     <p className="ml-2">
                         classification：
-                        <code className="text-sm font-bold text-gray-900">{props.species?.classification}</code>
+                        <code className="text-sm font-bold text-gray-900">{props.species?.classification != "n/a" ? props.species?.classification : "unknown"}</code>
                     </p>
                 </li>
             </ul>
